@@ -1,0 +1,55 @@
+org: nabendumanna
+app: crud-node
+service: crud-node
+frameworkVersion: '3'
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  getAllNote:
+    handler: src/handlers/get-all-note.handler
+    events:
+      - httpApi:
+          path: /note-list
+          method: get
+
+  createNote:
+    handler: src/handlers/create-note.handler
+    events:
+      - httpApi:
+          path: /note
+          method: post
+
+  findNote:
+    handler: src/handlers/find-note.handler
+    events:
+      - httpApi:
+          path: /note/{id}
+          method: get
+
+  updateNote:
+    handler: src/handlers/update-note.handler
+    events:
+      - httpApi:
+          path: /note/{id}
+          method: put
+
+  deleteNote:
+    handler: src/handlers/delete-note.handler
+    events:
+      - httpApi:
+          path: /note/{id}
+          method: delete

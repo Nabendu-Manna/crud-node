@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "467ed4e4-a67a-41a5-9f22-b47dfc1564dd",
+		"name": "CRUD Node Serverless API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13133819"
+	},
+	"item": [
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Nabendu\",\r\n    \"type\": \"Test1\",\r\n    \"content\": \"Test1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}/note",
+					"host": [
+						"{{base_uri}}"
+					],
+					"path": [
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Nabendu\",\r\n    \"type\": \"Test011\",\r\n    \"content\": \"Test011\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_uri}}/note/65184e40272b0f630c69164c",
+					"host": [
+						"{{base_uri}}"
+					],
+					"path": [
+						"note",
+						"65184e40272b0f630c69164c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Note List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_uri}}/note-list",
+					"host": [
+						"{{base_uri}}"
+					],
+					"path": [
+						"note-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_uri}}/note/65184e40272b0f630c69164c",
+					"host": [
+						"{{base_uri}}"
+					],
+					"path": [
+						"note",
+						"65184e40272b0f630c69164c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_uri}}/note/65184e40272b0f630c69164c",
+					"host": [
+						"{{base_uri}}"
+					],
+					"path": [
+						"note",
+						"65184e40272b0f630c69164c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
